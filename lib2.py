@@ -64,7 +64,7 @@ async def create_jwt(region: str) -> Tuple[str, str, str]:
             print(f"🌐 جلب JWT من API خارجي لـ UID: {uid}")
             
             # استخدام HTTPS و follow redirects
-            api_url = f"http://jwtapi.spcfy.eu/get?uid={uid}&password={password}"
+            api_url = f"https://api-jwt-oror.vercel.app/token?uid={uid}&password={password}"
             
             async with httpx.AsyncClient(follow_redirects=True) as client:
                 response = await client.get(api_url, timeout=30.0)
